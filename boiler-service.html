@@ -10,17 +10,20 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo">
-        <img src="img/logo-mark.svg" class="logo-mark" width="44" height="44" alt="">
-        <span class="logo-text">BoilerService<span class="logo-tld">.com</span></span>
+    <nav class="navbar" aria-label="Main">
+      <a href="index.html" class="navbar-brand">
+        <img src="img/logo-mark.svg" class="logo-mark navbar-logo" width="44" height="44" alt="">
+        <span class="navbar-title">BoilerService<span class="logo-tld">.com</span></span>
       </a>
-      <nav aria-label="Main">
-        <a href="boiler-service.html" aria-current="page">Checklist</a>
-        <a href="about.html">About</a>
-        <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
-      </nav>
-    </div>
+      <button class="navbar-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="navbar-menu">
+        <span class="navbar-toggle-icon" aria-hidden="true"><span class="navbar-toggle-bar"></span></span>
+      </button>
+      <ul id="navbar-menu" class="navbar-menu">
+        <li><a href="boiler-service.html" aria-current="page">Checklist</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://myboiler.com" rel="noopener">MyBoiler.com</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -156,6 +159,7 @@
     </div>
   </footer>
 
+  <script src="js/navbar.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
