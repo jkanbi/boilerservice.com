@@ -69,7 +69,6 @@ a:hover {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   width: min(100% - 2rem, var(--max-width));
   margin-inline: auto;
@@ -113,6 +112,13 @@ a:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .navbar-toggle {
@@ -181,7 +187,7 @@ a:hover {
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 0 0 0 auto;
+  margin: 0;
   padding: 0;
 }
 
@@ -225,7 +231,10 @@ a:hover {
 
   .navbar-toggle {
     display: inline-flex;
-    margin-left: auto;
+  }
+
+  .navbar-actions {
+    position: static;
   }
 
   .navbar-menu {
