@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Boiler service checklist for heating professionals — condensing and non-condensing boilers, FGA emissions testing, and system checks.">
+  <title>Boiler Service Checklist — BoilerService.com</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="img/logo-mark.svg" class="logo-mark" width="44" height="44" alt="">
+        <span class="logo-text">BoilerService<span class="logo-tld">.com</span></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="boiler-service.html" aria-current="page">Checklist</a>
+        <a href="about.html">About</a>
+        <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="/" class="back-link">&larr; Home</a>
+        <h1>Boiler Service</h1>
+        <p class="page-intro">
+          A practical maintenance checklist for heating professionals. Tick items as you work
+          through a service — your progress is saved in this browser until you clear it.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container prose prose-wide">
+        <p>
+          A modern boiler is often an electromechanical appliance with several moving parts and
+          system components that can break down when you least expect. The checks below form a
+          general maintenance schedule for boiler servicing.
+        </p>
+        <p>
+          In Europe, boilers may be maintained on hours-used (similar to cars) or on a time
+          schedule — annual or biennially. In the UK we typically work to an annual maintenance
+          schedule. Many manufacturers also invalidate extended warranties if the boiler is not
+          serviced annually.
+        </p>
+
+        <div class="checklist-toolbar">
+          <button type="button" class="btn-text" id="clearChecklists">Clear all ticks</button>
+          <a class="hub-link" href="https://hub.myboiler.com/boiler-service/?referrer=boilerservice.com" rel="noopener">View on Hub.MyBoiler.com</a>
+        </div>
+
+        <h2 id="condensing">Checklist for modern condensing boilers</h2>
+        <ul class="checklist" id="checklist-condensing" data-checklist="condensing">
+          <li><label><input type="checkbox"> Visual check externally to boiler.</label></li>
+          <li><label><input type="checkbox"> Checks on the flue integrity.</label></li>
+          <li><label><input type="checkbox"> Gas rating check of boiler in conjunction with FGA (Flue Gas Analysis) emissions check using a calibrated analyser.</label></li>
+          <li><label><input type="checkbox"> Checking safety devices.</label></li>
+          <li><label><input type="checkbox"> Boiler casing removed to check visually internal boiler condition of components — fan, pump, auto air vent.</label></li>
+          <li><label><input type="checkbox"> Checks and cleaning of internal heat exchanger dependent on emissions test and maintenance schedule (new seals may be required).</label></li>
+          <li><label><input type="checkbox"> Expansion vessel pressure if sealed system.</label></li>
+          <li><label><input type="checkbox"> Condense pump checked / cleaned.</label></li>
+          <li><label><input type="checkbox"> Boiler fired safely to identify any working faults.</label></li>
+          <li><label><input type="checkbox"> Boiler parts cleaned, if necessary.</label></li>
+          <li><label><input type="checkbox"> Check case seals form an effective seal.</label></li>
+          <li><label><input type="checkbox"> Fill in benchmark to note important checks carried out, or create a report.</label></li>
+          <li><label><input type="checkbox"> Check diverter valve condition.</label></li>
+        </ul>
+
+        <h2 id="non-condensing">Checklist for non-condensing boilers</h2>
+        <ul class="checklist" id="checklist-non-condensing" data-checklist="non-condensing">
+          <li><label><input type="checkbox"> Visual check externally to boiler.</label></li>
+          <li><label><input type="checkbox"> Checks on the flue integrity.</label></li>
+          <li><label><input type="checkbox"> Burner pressure check of boiler in conjunction with FGA (Flue Gas Analysis) emissions check using a calibrated analyser (if flue gas testing is not possible, a full strip down and clean should be carried out).</label></li>
+          <li><label><input type="checkbox"> Checking safety devices.</label></li>
+          <li><label><input type="checkbox"> Boiler casing removed to check visually internal boiler condition of components — fan, pump, auto air vent.</label></li>
+          <li><label><input type="checkbox"> Checks and cleaning of internal heat exchanger dependent on emissions test and maintenance schedule (new seals may be required).</label></li>
+          <li><label><input type="checkbox"> Expansion vessel pressure if sealed system.</label></li>
+          <li><label><input type="checkbox"> Boiler fired safely to identify any working faults.</label></li>
+          <li><label><input type="checkbox"> Boiler parts cleaned, if necessary.</label></li>
+          <li><label><input type="checkbox"> Check case seals form an effective seal.</label></li>
+          <li><label><input type="checkbox"> Fill in benchmark to note important checks carried out, or create a report.</label></li>
+        </ul>
+
+        <h2 id="fga">Combustion performance analysis / emissions testing</h2>
+        <p>
+          Most modern boilers require checking their combustion ratios using a flue gas analyser
+          (FGA). Many older non-condensing boilers can also be checked using an FGA. Some older
+          boilers in which you cannot measure combustion performance will require full strip down
+          and servicing. The following CO/CO<sub>2</sub> ratio levels trigger actions:
+        </p>
+
+        <div class="ratio-table-wrap">
+          <table class="ratio-table">
+            <thead>
+              <tr>
+                <th scope="col">CO / CO<sub>2</sub> ratio</th>
+                <th scope="col">Action required</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.0040 and lower</td>
+                <td>Does not require any further action</td>
+              </tr>
+              <tr>
+                <td>0.0040 to 0.0080</td>
+                <td>Requires cleaning</td>
+              </tr>
+              <tr>
+                <td>0.0080 and above</td>
+                <td>Requires full investigation and overhaul — classed as immediately dangerous</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Example calculation</h3>
+        <p>Data: CO 10 PPM, CO<sub>2</sub> 9.0%</p>
+        <ol class="calc-steps">
+          <li>Convert CO<sub>2</sub> to PPM: 9.0 &times; 10,000 = 90,000 PPM</li>
+          <li>Ratio = 10 &divide; 90,000 = <strong>0.0001</strong></li>
+        </ol>
+        <p><strong>Key:</strong> PPM = parts per million.</p>
+
+        <h2 id="other">Other information</h2>
+        <p>
+          There are other checks that are important and should be carried out by engineers.
+          Checking the water quality of the heating system is crucial for a long-lasting system.
+          Making sure correct levels of inhibitor / protector will help ensure the system does
+          not corrode internally and cause premature breakdown of parts. Checking other parts of
+          the system can indicate problems that may be caused by the boiler or to the boiler.
+        </p>
+
+        <p class="disclaimer">
+          Information is guidance only; repairs require qualified professionals. Do your own due
+          diligence; we accept no liability.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> BoilerService.com — an extension of <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a></p>
+      <nav aria-label="Footer">
+        <a href="boiler-service.html">Checklist</a>
+        <a href="about.html">About</a>
+        <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
+        <a href="https://boilermanuals.com" rel="noopener">BoilerManuals.com</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var storageKey = 'boilerservice-checklists';
+
+      function loadState() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey) || '{}');
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveState(state) {
+        localStorage.setItem(storageKey, JSON.stringify(state));
+      }
+
+      var state = loadState();
+
+      document.querySelectorAll('.checklist').forEach(function (list) {
+        var id = list.dataset.checklist;
+        var boxes = list.querySelectorAll('input[type="checkbox"]');
+        var saved = state[id] || [];
+
+        boxes.forEach(function (box, index) {
+          box.checked = !!saved[index];
+          box.addEventListener('change', function () {
+            state[id] = Array.from(boxes).map(function (b) { return b.checked; });
+            saveState(state);
+          });
+        });
+      });
+
+      document.getElementById('clearChecklists').addEventListener('click', function () {
+        document.querySelectorAll('.checklist input[type="checkbox"]').forEach(function (box) {
+          box.checked = false;
+        });
+        saveState({});
+      });
+    }());
+  </script>
+</body>
+</html>

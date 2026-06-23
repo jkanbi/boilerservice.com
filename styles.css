@@ -1,0 +1,662 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Shared with boilermanuals.com */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #202124;
+  --text-muted: #5f6368;
+  --border: #e8eaed;
+  --border-list: #e4e4e4;
+  --link: #0066cc;
+  --link-footer: #1a73e8;
+
+  /* MyBoiler.com brand */
+  --accent: #2353a2;
+  --accent-dark: #1f3f8d;
+  --accent-green: #0a8d4c;
+  --footer-bg: #191970;
+  --logo-dark: #33305e;
+  --logo-muted: #4765ad;
+
+  --shadow: 0 1px 6px rgba(32, 33, 36, 0.08);
+  --radius: 8px;
+  --max-width: 1080px;
+  --font: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+/* Header — boilermanuals navbar style */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.75rem;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--logo-dark);
+  font-weight: 600;
+  font-size: 1.375rem;
+  letter-spacing: -0.25px;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: var(--logo-dark);
+}
+
+.logo-mark {
+  display: block;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+}
+
+.logo-tld {
+  font-weight: 400;
+  color: var(--logo-muted);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-header nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Hero */
+
+.hero {
+  padding: 3rem 0 2rem;
+  background: var(--bg);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+  max-width: 22ch;
+}
+
+.lead {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 52ch;
+  line-height: 1.65;
+}
+
+/* Sections */
+
+section {
+  padding-block: 2.5rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.section-intro {
+  margin: -0.25rem 0 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Resource cards */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.card:hover {
+  border-color: #dfe1e5;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.card p {
+  margin: 0;
+  flex: 1;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.card-link {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--link);
+}
+
+.card:hover .card-link {
+  text-decoration: underline;
+}
+
+.card-muted {
+  opacity: 0.9;
+  cursor: default;
+}
+
+.card-muted:hover {
+  box-shadow: none;
+  border-color: var(--border);
+}
+
+.card-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #f8f9fa;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  align-self: flex-start;
+}
+
+/* Topics — boilermanuals styled-list */
+
+.topics {
+  background: var(--bg);
+  border-block: 1px solid var(--border);
+}
+
+.topic-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+}
+
+.topic-list li {
+  padding: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border-list);
+  border-radius: 4px;
+  margin-bottom: 0;
+}
+
+.topic-list strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.topic-list strong a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.topic-list strong a:hover {
+  text-decoration: underline;
+}
+
+.topic-list span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Brands */
+
+.brand-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.brand-grid a {
+  padding: 10px;
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-list);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--link);
+  min-width: calc(20% - 1px);
+  flex: 1 1 140px;
+  box-sizing: border-box;
+  transition: background 0.15s;
+}
+
+.brand-grid a:hover {
+  background: #f8f9fa;
+  text-decoration: underline;
+}
+
+/* CTA */
+
+.cta {
+  padding-bottom: 3.5rem;
+}
+
+.cta-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cta-inner h2 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.cta-inner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 42ch;
+  line-height: 1.65;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: #f8f9fa;
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.btn-secondary:hover {
+  border-color: #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Page templates */
+
+.page-hero {
+  padding: 2.5rem 0 1rem;
+}
+
+.page-hero h1 {
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.6rem, 3vw, 1.75rem);
+  font-weight: 400;
+  color: var(--text);
+}
+
+.back-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--link);
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.page-content {
+  padding-bottom: 3.5rem;
+}
+
+.prose {
+  max-width: 62ch;
+}
+
+.prose p,
+.prose ul {
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.prose ul {
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
+.prose a {
+  color: var(--link);
+}
+
+.prose-wide {
+  max-width: 48rem;
+}
+
+.page-intro {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 48rem;
+}
+
+.prose h3 {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.checklist-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 0.85rem 1rem;
+  background: #f8f9fa;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.btn-text {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-text:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hub-link {
+  font-size: 0.9rem;
+}
+
+.checklist {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  border: 1px solid var(--border-list);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.checklist li {
+  margin: 0;
+  border-bottom: 1px solid var(--border-list);
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  line-height: 1.55;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.checklist label:hover {
+  background: #f8f9fa;
+}
+
+.checklist input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+
+.checklist label:has(input:checked) {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(95, 99, 104, 0.55);
+}
+
+.ratio-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+}
+
+.ratio-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.ratio-table th,
+.ratio-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-list);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ratio-table th {
+  background: #f8f9fa;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.ratio-table td {
+  color: var(--text-muted);
+}
+
+.calc-steps {
+  color: var(--text-muted);
+  padding-left: 1.25rem;
+}
+
+.calc-steps li {
+  margin-bottom: 0.35rem;
+}
+
+.disclaimer {
+  margin-top: 2rem;
+  padding: 1rem 1.15rem;
+  border-left: 3px solid var(--accent);
+  background: #f8f9fa;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.card-featured {
+  border-color: var(--accent);
+  box-shadow: 0 1px 6px rgba(35, 83, 162, 0.12);
+}
+
+/* Footer — boilermanuals + MyBoiler midnight */
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 2rem 0 3rem;
+  background: var(--footer-bg);
+  border-top: none;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-footer nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer nav a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .brand-grid a {
+    min-width: calc(50% - 1px);
+    flex: 1 1 45%;
+  }
+
+  .topic-list {
+    gap: 0;
+  }
+
+  .topic-list li + li {
+    margin-top: -1px;
+  }
+}

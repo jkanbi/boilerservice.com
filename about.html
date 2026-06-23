@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About BoilerService.com — a microsite providing boiler servicing information and links to the MyBoiler.com resource network.">
+  <title>About — BoilerService.com</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="img/logo-mark.svg" class="logo-mark" width="44" height="44" alt="">
+        <span class="logo-text">BoilerService<span class="logo-tld">.com</span></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="boiler-service.html">Checklist</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="/" class="back-link">&larr; Home</a>
+        <h1>About BoilerService.com</h1>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container prose">
+        <p>
+          BoilerService.com is a microsite created to provide practical information and resources
+          around boiler servicing, maintenance, and heating system care — for homeowners,
+          landlords, and heating professionals alike.
+        </p>
+        <p>
+          Whether you need to understand what an annual service involves, troubleshoot a fault
+          code, or find technical documentation for your boiler, we aim to point you in the
+          right direction quickly.
+        </p>
+        <p>
+          This site is part of the <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
+          family of resources. MyBoiler.com offers a wider range of guides covering energy saving,
+          combi boilers, heat pumps, fault diagnostics, and more.
+        </p>
+        <p>
+          For free boiler manuals — including installation, service, and user guides — visit our
+          sister site <a href="https://boilermanuals.com" rel="noopener">BoilerManuals.com</a>,
+          which hosts literature for dozens of boiler and control manufacturers.
+        </p>
+        <h2>Related sites</h2>
+        <ul>
+          <li><a href="https://myboiler.com" rel="noopener">MyBoiler.com</a> — Smarter heating &amp; hot water resources</li>
+          <li><a href="https://boilermanuals.com" rel="noopener">BoilerManuals.com</a> — Free boiler and controls manuals</li>
+        </ul>
+        <p>
+          Our <a href="boiler-service.html">boiler service checklist</a> provides step-by-step
+          servicing guidance for heating professionals, including condensing and non-condensing
+          boiler checks and FGA emissions ratios — previously hosted on
+          <a href="https://hub.myboiler.com/boiler-service/?referrer=boilerservice.com" rel="noopener">Hub.MyBoiler.com</a>.
+        </p>
+        <p>
+          We are building out additional features — including tools to help you find and compare
+          qualified heating engineers in your area. Check back soon, or
+          <a href="https://myboiler.com/contact/" rel="noopener">get in touch via MyBoiler.com</a>
+          if you have questions or suggestions.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> BoilerService.com — an extension of <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a></p>
+      <nav aria-label="Footer">
+        <a href="boiler-service.html">Checklist</a>
+        <a href="about.html">About</a>
+        <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
+        <a href="https://boilermanuals.com" rel="noopener">BoilerManuals.com</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
