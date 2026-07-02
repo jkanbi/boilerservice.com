@@ -30,17 +30,24 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Boiler servicing, maintenance &amp; heating know-how</h1>
+        <h1>Boiler servicing made simple</h1>
         <p class="lead">
-          Practical information for homeowners and heating professionals — from annual
-          boiler service checks to fault codes, manuals, and energy-saving tips.
+          Practical guides and tools for homeowners and heating professionals — from annual
+          service checklists to fault codes, manuals, and energy-saving tips.
         </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="boiler-service.html">Open service checklist</a>
+          <a class="btn btn-secondary" href="https://boilermanuals.com" rel="noopener">Browse manuals</a>
+        </div>
       </div>
     </section>
 
     <section class="resources" aria-labelledby="resources-heading">
       <div class="container">
-        <h2 id="resources-heading">Explore our resources</h2>
+        <div class="section-header">
+          <h2 id="resources-heading">Explore our resources</h2>
+          <p class="section-intro">Everything you need to service, maintain, and understand your heating system.</p>
+        </div>
         <div class="card-grid">
           <a class="card card-featured" href="boiler-service.html">
             <h3>Boiler Service Checklist</h3>
@@ -68,29 +75,32 @@
 
     <section class="topics" aria-labelledby="topics-heading">
       <div class="container">
-        <h2 id="topics-heading">What we cover</h2>
-        <ul class="topic-list">
-          <li>
+        <div class="section-header">
+          <h2 id="topics-heading">What we cover</h2>
+          <p class="section-intro">Guides and resources for every stage of boiler ownership.</p>
+        </div>
+        <ul class="feature-grid">
+          <li class="feature-card">
             <strong><a href="boiler-service.html">Annual boiler service</a></strong>
-            <span>Professional checklist — what to check on condensing and non-condensing boilers, including FGA emissions.</span>
+            <span>Professional checklist for condensing and non-condensing boilers, including FGA emissions.</span>
           </li>
-          <li>
+          <li class="feature-card">
             <strong>Fault codes &amp; diagnostics</strong>
             <span>Understand common error codes and when to call a professional.</span>
           </li>
-          <li>
+          <li class="feature-card">
             <strong>Energy efficiency</strong>
             <span>Tips to optimise your heating system and reduce running costs.</span>
           </li>
-          <li>
+          <li class="feature-card">
             <strong>Combi &amp; system boilers</strong>
             <span>Guides tailored to the most common UK boiler types.</span>
           </li>
-          <li>
+          <li class="feature-card">
             <strong>Controls &amp; thermostats</strong>
-            <span>Get more from your heating controls — TRVs, programmers, and smart thermostats.</span>
+            <span>Get more from TRVs, programmers, and smart thermostats.</span>
           </li>
-          <li>
+          <li class="feature-card">
             <strong>Landlord certificates</strong>
             <span>Gas safety requirements for rented properties.</span>
           </li>
@@ -100,8 +110,10 @@
 
     <section class="brands" aria-labelledby="brands-heading">
       <div class="container">
-        <h2 id="brands-heading">Popular boiler brands</h2>
-        <p class="section-intro">Manuals and technical documents for leading UK manufacturers are available at <a href="https://boilermanuals.com">BoilerManuals.com</a>.</p>
+        <div class="section-header">
+          <h2 id="brands-heading">Popular boiler brands</h2>
+          <p class="section-intro">Manuals and technical documents for leading UK manufacturers are available at <a href="https://boilermanuals.com">BoilerManuals.com</a>.</p>
+        </div>
         <div class="brand-grid">
           <a href="https://boilermanuals.com" rel="noopener">Vaillant</a>
           <a href="https://boilermanuals.com" rel="noopener">Worcester Bosch</a>
@@ -132,14 +144,30 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> BoilerService.com — an extension of <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a></p>
-      <nav aria-label="Footer">
-        <a href="boiler-service.html">Checklist</a>
-        <a href="about.html">About</a>
-        <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
-        <a href="https://boilermanuals.com" rel="noopener">BoilerManuals.com</a>
-      </nav>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo">BoilerService.com</p>
+        <p class="footer-tagline">Practical boiler servicing guides for homeowners and heating engineers.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Resources</p>
+        <nav class="footer-links" aria-label="Resources">
+          <a href="index.html">Home</a>
+          <a href="boiler-service.html">Service checklist</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Related sites</p>
+        <nav class="footer-links" aria-label="Related sites">
+          <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a>
+          <a href="https://boilermanuals.com" rel="noopener">BoilerManuals.com</a>
+          <a href="https://combiboiler.com" rel="noopener">CombiBoiler.com</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> BoilerService.com — part of the <a href="https://myboiler.com" rel="noopener">MyBoiler.com</a> family</p>
     </div>
   </footer>
 
