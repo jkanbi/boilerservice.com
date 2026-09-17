@@ -748,11 +748,6 @@ h2 {
   color: var(--accent);
 }
 
-.hub-link {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
 .checklist {
   list-style: none;
   margin: 0 0 2rem;
