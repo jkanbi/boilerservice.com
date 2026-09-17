@@ -639,16 +639,40 @@ h2 {
 /* Page templates */
 
 .page-hero {
-  padding: 3rem 0 1.5rem;
+  padding: 2.5rem 0 0;
   background: var(--bg);
 }
 
 .page-hero h1 {
-  margin: 0.75rem 0 0;
+  margin: 0;
   font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
+}
+
+.intro-card,
+.page-card {
+  padding: 1.75rem 2rem 1.85rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.intro-card {
+  margin-top: 0.85rem;
+}
+
+.intro-card p {
+  margin: 0.9rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.intro-card .page-intro {
+  margin-top: 0.7rem;
+  max-width: none;
+  font-size: 1.05rem;
 }
 
 .back-link {
@@ -667,7 +691,30 @@ h2 {
 }
 
 .page-content {
+  padding-top: 1.25rem;
   padding-bottom: 4rem;
+}
+
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.page-card > h2:first-child {
+  margin-top: 0;
+}
+
+.page-card .ratio-table-wrap {
+  box-shadow: none;
+}
+
+.page-card .disclaimer {
+  margin-bottom: 0;
+}
+
+.checklist-block .checklist {
+  margin-bottom: 0;
 }
 
 .prose {
@@ -723,11 +770,58 @@ h2 {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin: 1.5rem 0;
-  padding: 1rem 1.25rem;
-  background: var(--bg);
+  margin: 0 0 0.75rem;
+  padding: 0;
+  background: transparent;
   border: none;
+}
+
+.checklist-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+  flex: 1 1 auto;
+  min-width: min(100%, 18rem);
+  padding: 0.3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.checklist-switch-btn {
+  padding: 0.65rem 0.85rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.checklist-switch-btn:hover:not(.is-active) {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.checklist-switch-btn.is-active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(24, 99, 220, 0.25);
+}
+
+.checklist-switch-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.checklist-panel h2 {
+  margin-top: 1.25rem;
 }
 
 .btn-text {
@@ -962,5 +1056,25 @@ h2 {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+  }
+
+  .checklist-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .intro-card,
+  .page-card {
+    padding: 1.35rem 1.25rem 1.5rem;
+  }
+
+  .checklist-switch {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .checklist-switch-btn {
+    font-size: 0.8125rem;
+    padding: 0.65rem 0.45rem;
   }
 }
