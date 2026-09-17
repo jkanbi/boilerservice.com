@@ -713,6 +713,45 @@ h2 {
   margin-bottom: 0;
 }
 
+.page-card p:last-child,
+.page-card ul:last-child {
+  margin-bottom: 0;
+}
+
+.page-card .related-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.page-card .related-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.related-list li:last-child {
+  padding-bottom: 0;
+}
+
+.page-card .related-list a {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.page-card .related-list a:hover {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.page-card .related-list span {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
 .checklist-block .checklist {
   margin-bottom: 0;
 }
