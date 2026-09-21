@@ -6,6 +6,7 @@ A simple static microsite for boiler servicing information and links to the MyBo
 
 - **Home** (`index.html`) — overview, resource links, topics, and popular brands
 - **Book a visit** (`book/index.html`) — customer intake for an annual service or repair in the NW London–M25 launch area (`/book/`)
+- **Terms & Conditions** (`terms/index.html`) — marketplace / introducer terms (`/terms/`)
 - **Boiler Service Checklist** (`boiler-service.html`) — professional servicing checklist (from [Hub.MyBoiler.com](https://hub.myboiler.com/boiler-service/?referrer=boilerservice.com))
 - **About** (`about.html`) — site purpose and related properties
 
