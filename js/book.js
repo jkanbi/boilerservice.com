@@ -1,15 +1,11 @@
 (function () {
-  // Google Apps Script Web App URL (doPost) that appends a row to
-  // “BoilerService — Jobs” (spreadsheet 1sAOQzDlgAa3DB4vDZ-4Op5h7Arre8xW1q5poMx98_Gc).
-  //
-  // After deploying scripts/jobs-form-apps-script.gs as a Web App
-  // (Execute as: Me, Who has access: Anyone), paste the /exec URL here.
-  var SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbw4CVLC8DGwJWOiS_vbo5CKzfqkDCh6eLhiAEgJUxn_KepmrgSMcuKM09CEsnL9Pk9E/exec";
+  // Live booking intake: POST JSON to the Supabase Edge Function (not Apps Script).
+  // The anon key is publishable and is required for verify_jwt on the function.
+  var SUBMIT_BOOKING_URL = "https://yipcailckjlvkkzcexgk.supabase.co/functions/v1/submit-booking";
+  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpcGNhaWxja2psdmtremNleGdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk5OTIxMzcsImV4cCI6MjEwNTU2ODEzN30.l20oVcAHgkYaLwwqJdfCM3y2Y-xtG1rdm8k4s_diUt4";
 
   var UK_POSTCODE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
   var UK_MOBILE = /^(?:\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/;
-  var WEBHOOK_MISSING_MESSAGE =
-    "Booking submissions are not connected yet. Set SHEET_WEBHOOK_URL in js/book.js after deploying the Apps Script web app.";
 
   var form = document.getElementById("booking-form");
   if (!form) {
@@ -21,24 +17,7 @@
   var submitButton = document.getElementById("submit-button");
   var formError = document.getElementById("form-error");
   var formSuccess = document.getElementById("form-success");
-  var formConfigWarning = document.getElementById("form-config-warning");
   var preferredDate = document.getElementById("preferred-date");
-
-  function webhookUrl() {
-    return String(SHEET_WEBHOOK_URL || "").trim();
-  }
-
-  function webhookConfigured() {
-    return webhookUrl().indexOf("https://") === 0;
-  }
-
-  if (!webhookConfigured()) {
-    console.warn("[BoilerService /book] " + WEBHOOK_MISSING_MESSAGE);
-    if (formConfigWarning) {
-      formConfigWarning.hidden = false;
-      formConfigWarning.textContent = WEBHOOK_MISSING_MESSAGE;
-    }
-  }
 
   function todayISO() {
     var now = new Date();
@@ -268,7 +247,8 @@
       preferred_window: combinedPreferredWindow(),
       access_notes: form.access_notes.value.trim(),
       notes: "Consent: yes. Launch area: NW London–M25.",
-      consent: form.consent.checked ? "Yes" : "No"
+      consent: form.consent.checked ? "Yes" : "No",
+      _honey: form._honey ? form._honey.value : ""
     };
   }
 
@@ -305,14 +285,9 @@
       return;
     }
 
+    // Honeypot: bots that fill this still see success; no live write is needed.
     if (form._honey.value) {
       showSuccess();
-      return;
-    }
-
-    if (!webhookConfigured()) {
-      console.warn("[BoilerService /book] " + WEBHOOK_MISSING_MESSAGE);
-      showError(WEBHOOK_MISSING_MESSAGE);
       return;
     }
 
@@ -320,13 +295,12 @@
     submitButton.textContent = "Sending…";
     formError.hidden = true;
 
-    // text/plain avoids a CORS preflight; Apps Script cannot handle OPTIONS.
-    // The Web App still parses JSON from the request body.
-    fetch(webhookUrl(), {
+    fetch(SUBMIT_BOOKING_URL, {
       method: "POST",
-      redirect: "follow",
       headers: {
-        "Content-Type": "text/plain;charset=utf-8"
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + SUPABASE_ANON_KEY,
+        apikey: SUPABASE_ANON_KEY
       },
       body: JSON.stringify(payloadFromForm())
     })
@@ -341,10 +315,10 @@
           showSuccess();
           return;
         }
-        if (result.ok && data.ok === false) {
-          throw new Error(data.error || "The booking sheet rejected this request.");
+        if (data.ok === false) {
+          throw new Error(data.error || "The booking service rejected this request.");
         }
-        throw new Error("Unexpected response from the booking sheet.");
+        throw new Error("Unexpected response from the booking service.");
       })
       .catch(function () {
         showError("We couldn’t send this request just now. Please try again, or message us on WhatsApp via the homepage.");
