@@ -1117,3 +1117,34 @@ h2 {
     padding: 0.65rem 0.45rem;
   }
 }
+
+/* Booking page */
+
+.form-lede {
+  margin: 0.35rem 0 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.hs-form-embed {
+  min-height: 12rem;
+}
+
+.next-steps {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.next-steps li {
+  margin-bottom: 0.45rem;
+}
+
+.next-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.page-card .next-steps + .disclaimer {
+  margin-top: 1.5rem;
+}

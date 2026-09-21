@@ -5,8 +5,19 @@ A simple static microsite for boiler servicing information and links to the MyBo
 ## Pages
 
 - **Home** (`index.html`) — overview, resource links, topics, and popular brands
+- **Book a visit** (`book/index.html`) — customer intake for an annual service or repair in the NW London–M25 launch area (`/book/`)
 - **Boiler Service Checklist** (`boiler-service.html`) — professional servicing checklist (from [Hub.MyBoiler.com](https://hub.myboiler.com/boiler-service/?referrer=boilerservice.com))
 - **About** (`about.html`) — site purpose and related properties
+
+## Booking form (HubSpot)
+
+The `/book/` page embeds a HubSpot form (EU1) rather than posting from this site:
+
+- Portal ID: `148934146`
+- Form GUID: `82340d84-dc01-4593-98ce-cd512841149f`
+- Embed script: `https://js-eu1.hsforms.net/forms/embed/148934146.js`
+
+Edit the form in HubSpot; this repo only hosts the embed. To preview locally, serve the site (`python -m http.server 3456`) and open http://localhost:3456/book/.
 
 ## Related sites
 
