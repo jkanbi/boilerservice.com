@@ -10,37 +10,25 @@ A simple static microsite for boiler servicing information and links to the MyBo
 - **Boiler Service Checklist** (`boiler-service.html`) — professional servicing checklist (from [Hub.MyBoiler.com](https://hub.myboiler.com/boiler-service/?referrer=boilerservice.com))
 - **About** (`about.html`) — site purpose and related properties
 
-## Booking form (native → Google Sheet)
+## Booking form (native → Supabase)
 
-The `/book/` page is a **native HTML form** (no HubSpot embed). GitHub Pages cannot write to Google Sheets, so the form `fetch`es JSON to a **Google Apps Script Web App**, which appends a row to the Jobs spreadsheet.
+The `/book/` page is a **native HTML form** (no HubSpot embed). GitHub Pages cannot write to a database, so the form `fetch`es JSON to a **Supabase Edge Function**, which creates the customer / boiler / job records.
 
-- Spreadsheet: [BoilerService — Jobs](https://docs.google.com/spreadsheets/d/1sAOQzDlgAa3DB4vDZ-4Op5h7Arre8xW1q5poMx98_Gc/edit)
-- Spreadsheet ID: `1sAOQzDlgAa3DB4vDZ-4Op5h7Arre8xW1q5poMx98_Gc`
-- Script source: [`scripts/jobs-form-apps-script.gs`](scripts/jobs-form-apps-script.gs)
-- Client: [`js/book.js`](js/book.js) (`SHEET_WEBHOOK_URL`)
+- Endpoint: `https://yipcailckjlvkkzcexgk.supabase.co/functions/v1/submit-booking`
+- Client: [`js/book.js`](js/book.js)
+- Auth: the project **anon** (publishable) key is sent as `Authorization: Bearer …` and `apikey` so the function’s `verify_jwt` check succeeds. It is not a secret.
 
-Columns written (script creates / extends the header row, including optional `boiler_model` after `boiler_brand`):
+The browser posts `Content-Type: application/json`. Success is `{ "ok": true, "job_code": "JOB-…" }`; failure is `{ "ok": false, "error": "…" }`.
 
-`job_id`, `created_at`, `status`, `job_type`, `customer_name`, `mobile`, `email`, `postcode`, `address`, `boiler_brand`, `boiler_model`, `boiler_age`, `repair_issue`, `fault_code`, `preferred_window`, `access_notes`, `matched_engineer`, `engineer_price`, `stripe_link`, `notes`
+Payload keys (mapped from the live form fields in `book/index.html`):
 
-New rows get `status = new`, an ISO `created_at`, and a unique `job_id`. The script always sets those server-side.
+`customer_name`, `mobile`, `email`, `postcode`, `address` (street + town), `job_type`, `boiler_brand`, `boiler_model`, `boiler_age`, `repair_issue`, `fault_code`, `preferred_window` (date + morning/afternoon/evening + notes), `access_notes`, `notes` (includes the consent line), `consent`, `_honey`
 
-### Deploy the Apps Script web app
+A filled honeypot (`_honey`) shows the success state in the browser without requiring a real write. The Edge Function also no-ops if that field is sent populated.
 
-1. Open the [Jobs spreadsheet](https://docs.google.com/spreadsheets/d/1sAOQzDlgAa3DB4vDZ-4Op5h7Arre8xW1q5poMx98_Gc/edit).
-2. **Extensions → Apps Script**.
-3. Replace any stub code with [`scripts/jobs-form-apps-script.gs`](scripts/jobs-form-apps-script.gs). Confirm `SPREADSHEET_ID` matches the sheet.
-4. **Deploy → New deployment → Web app**.
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-5. Authorise Google when prompted, then copy the Web App URL (`…/exec`).
-6. Paste that URL into `js/book.js` as `SHEET_WEBHOOK_URL` and commit.
+CORS on the function allows `https://boilerservice.com`, `https://www.boilerservice.com`, and local preview on port **5500**. To submit from a local copy, serve on that port (`python -m http.server 5500`) and open http://127.0.0.1:5500/book/.
 
-Until `SHEET_WEBHOOK_URL` is set, the form still renders with validation and success/error states, and shows a warning that submissions are not connected.
-
-The browser posts JSON as `text/plain` (Apps Script cannot handle CORS `OPTIONS` preflights). `doPost` parses the JSON body and returns `{ ok: true }`.
-
-To preview locally, serve the site (`python -m http.server 3456`) and open http://localhost:3456/book/.
+The previous Google Apps Script / Sheets webhook (`scripts/jobs-form-apps-script.gs`) is no longer used for live `/book/` submissions.
 
 ## Related sites
 

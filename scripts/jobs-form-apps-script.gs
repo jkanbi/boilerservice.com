@@ -1,4 +1,7 @@
 /**
+ * LEGACY — no longer used by the live /book/ form.
+ * js/book.js now POSTs to the Supabase Edge Function `submit-booking`.
+ *
  * BoilerService — Jobs form intake (Google Apps Script Web App)
  *
  * Spreadsheet: BoilerService — Jobs
