@@ -7,6 +7,7 @@
   <title>Book a Gas Safe boiler service or repair — BoilerService.com</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script src="https://js-eu1.hsforms.net/forms/embed/148934146.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -50,192 +51,10 @@
     <section class="page-content">
       <div class="container prose-wide page-stack">
         <div class="page-card" id="booking-card">
-          <div id="booking-panel">
           <h2>Your details</h2>
-          <p class="form-lede">
-            Tell us about the job and how to reach you. Required fields are marked with
-            <span class="req-mark" aria-hidden="true">*</span><span class="visually-hidden">required</span>.
-          </p>
-
-          <div class="form-banner form-banner-error" id="form-error" hidden role="alert" tabindex="-1"></div>
-
-          <form class="booking-form" id="booking-form" novalidate autocomplete="on">
-            <!--
-              FormSubmit.co AJAX posts to BOOKING_EMAIL in ../js/book.js
-              (bookings@boilerservice.com). Confirm that inbox on first use —
-              FormSubmit sends a one-time activation email before live delivery.
-            -->
-            <div class="form-row form-row-2">
-              <div class="form-field">
-                <label for="full-name">Full name <span class="req-mark" aria-hidden="true">*</span></label>
-                <input id="full-name" name="full_name" type="text" autocomplete="name" required maxlength="120" aria-required="true">
-                <p class="form-error" id="full-name-error" hidden></p>
-              </div>
-              <div class="form-field">
-                <label for="mobile">Mobile <span class="req-mark" aria-hidden="true">*</span></label>
-                <input id="mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" required maxlength="20" aria-required="true" placeholder="07… or +44 7…">
-                <p class="form-error" id="mobile-error" hidden></p>
-              </div>
-            </div>
-
-            <div class="form-row form-row-2">
-              <div class="form-field">
-                <label for="email">Email <span class="req-mark" aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" required maxlength="120" aria-required="true">
-                <p class="form-error" id="email-error" hidden></p>
-              </div>
-              <div class="form-field">
-                <label for="postcode">Postcode <span class="req-mark" aria-hidden="true">*</span></label>
-                <input id="postcode" name="postcode" type="text" autocomplete="postal-code" required maxlength="10" aria-required="true" aria-describedby="postcode-hint" placeholder="e.g. NW10 4AB">
-                <p class="form-hint" id="postcode-hint">Launch area: NW London and inside the M25.</p>
-                <p class="form-error" id="postcode-error" hidden></p>
-              </div>
-            </div>
-
-            <div class="form-row form-row-2">
-              <div class="form-field">
-                <label for="street">Street address <span class="req-mark" aria-hidden="true">*</span></label>
-                <input id="street" name="street_address" type="text" autocomplete="street-address" required maxlength="160" aria-required="true">
-                <p class="form-error" id="street-error" hidden></p>
-              </div>
-              <div class="form-field">
-                <label for="town">Town / area <span class="req-mark" aria-hidden="true">*</span></label>
-                <input id="town" name="town" type="text" autocomplete="address-level2" required maxlength="80" aria-required="true" placeholder="e.g. Wembley">
-                <p class="form-error" id="town-error" hidden></p>
-              </div>
-            </div>
-
-            <fieldset class="form-fieldset" id="job-type">
-              <legend>Job type <span class="req-mark" aria-hidden="true">*</span></legend>
-              <div class="choice-group" role="radiogroup" aria-required="true">
-                <label class="choice-card">
-                  <input type="radio" name="job_type" value="Annual service" required>
-                  <span>Annual service</span>
-                </label>
-                <label class="choice-card">
-                  <input type="radio" name="job_type" value="Repair" required>
-                  <span>Repair</span>
-                </label>
-              </div>
-              <p class="form-error" id="job-type-error" hidden></p>
-            </fieldset>
-
-            <div class="form-row form-row-2">
-              <div class="form-field">
-                <label for="boiler-brand">Boiler brand <span class="req-mark" aria-hidden="true">*</span></label>
-                <select id="boiler-brand" name="boiler_brand" required aria-required="true">
-                  <option value="">Select a brand</option>
-                  <option value="Worcester Bosch">Worcester Bosch</option>
-                  <option value="Vaillant">Vaillant</option>
-                  <option value="Ideal">Ideal</option>
-                  <option value="Baxi">Baxi</option>
-                  <option value="Glow-worm">Glow-worm</option>
-                  <option value="Alpha">Alpha</option>
-                  <option value="Potterton">Potterton</option>
-                  <option value="Ariston">Ariston</option>
-                  <option value="Viessmann">Viessmann</option>
-                  <option value="Other / not sure">Other / not sure</option>
-                </select>
-                <p class="form-error" id="boiler-brand-error" hidden></p>
-              </div>
-              <div class="form-field">
-                <label for="boiler-age">Approx. boiler age</label>
-                <select id="boiler-age" name="boiler_age">
-                  <option value="">Optional</option>
-                  <option value="Under 2 years">Under 2 years</option>
-                  <option value="2–5 years">2–5 years</option>
-                  <option value="6–10 years">6–10 years</option>
-                  <option value="11–15 years">11–15 years</option>
-                  <option value="Over 15 years">Over 15 years</option>
-                  <option value="Not sure">Not sure</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="repair-fields" id="repair-fields" hidden>
-              <div class="form-field">
-                <label for="repair-issue">What’s wrong? <span class="req-mark" aria-hidden="true">*</span></label>
-                <textarea id="repair-issue" name="repair_issue" rows="3" maxlength="500" placeholder="e.g. no hot water, knocking noise, leaking from underneath"></textarea>
-                <p class="form-error" id="repair-issue-error" hidden></p>
-              </div>
-              <div class="form-field">
-                <label for="fault-code">Fault code</label>
-                <input id="fault-code" name="fault_code" type="text" maxlength="40" placeholder="If shown on the boiler display">
-                <p class="form-hint">Optional — include it if the boiler is showing one.</p>
-              </div>
-            </div>
-
-            <fieldset class="form-fieldset" id="preferred">
-              <legend>Preferred day and window <span class="req-mark" aria-hidden="true">*</span></legend>
-              <p class="form-hint form-hint-block">Give a date, or describe what works — and pick a time of day.</p>
-              <div class="form-row form-row-2">
-                <div class="form-field">
-                  <label for="preferred-date">Preferred date</label>
-                  <input id="preferred-date" name="preferred_date" type="date">
-                </div>
-                <div class="form-field">
-                  <label for="preferred-notes">Or tell us what works</label>
-                  <input id="preferred-notes" name="preferred_notes" type="text" maxlength="160" placeholder="e.g. any weekday after 14:00">
-                </div>
-              </div>
-              <div class="choice-group choice-group-3">
-                <label class="choice-card">
-                  <input type="radio" name="preferred_window" value="Morning" required>
-                  <span>Morning</span>
-                </label>
-                <label class="choice-card">
-                  <input type="radio" name="preferred_window" value="Afternoon" required>
-                  <span>Afternoon</span>
-                </label>
-                <label class="choice-card">
-                  <input type="radio" name="preferred_window" value="Evening" required>
-                  <span>Evening</span>
-                </label>
-              </div>
-              <p class="form-error" id="preferred-error" hidden></p>
-            </fieldset>
-
-            <div class="form-field">
-              <label for="access-notes">Access notes</label>
-              <textarea id="access-notes" name="access_notes" rows="3" maxlength="400" placeholder="Parking, entry codes, boiler location, pets…"></textarea>
-              <p class="form-hint">Optional.</p>
-            </div>
-
-            <div class="form-field form-consent">
-              <label class="consent-label">
-                <input id="consent" name="consent" type="checkbox" value="Yes" required aria-required="true">
-                <span>
-                  I agree to be contacted about this booking. Work is provided by an
-                  independent Gas Safe registered engineer. BoilerService introduces
-                  customers to engineers and does not itself carry out gas work.
-                  <span class="req-mark" aria-hidden="true">*</span>
-                </span>
-              </label>
-              <p class="form-error" id="consent-error" hidden></p>
-            </div>
-
-            <label class="visually-hidden" for="company-website">Leave this field empty</label>
-            <input class="visually-hidden" id="company-website" name="_honey" type="text" tabindex="-1" autocomplete="off">
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit" id="submit-button">Send booking request</button>
-            </div>
-          </form>
-          </div>
-
-          <div class="form-success" id="form-success" hidden tabindex="-1">
-            <h2>Request sent</h2>
-            <p>
-              Thank you. We’ve received your booking request and will match you with an
-              independent Gas Safe engineer covering the NW London–M25 area.
-            </p>
-            <p>
-              Expect a WhatsApp or phone follow-up to confirm availability and price.
-              The engineer sets the price and carries out the work.
-            </p>
-            <p>
-              <a href="../index.html">Back to the homepage</a>
-            </p>
+          <p class="form-lede">Tell us about the job and how to reach you.</p>
+          <div class="hs-form-embed">
+            <div class="hs-form-frame" data-region="eu1" data-form-id="82340d84-dc01-4593-98ce-cd512841149f" data-portal-id="148934146"></div>
           </div>
         </div>
 
@@ -285,7 +104,6 @@
   </footer>
 
   <script src="../js/navbar.js"></script>
-  <script src="../js/book.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

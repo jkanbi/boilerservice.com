@@ -9,20 +9,15 @@ A simple static microsite for boiler servicing information and links to the MyBo
 - **Boiler Service Checklist** (`boiler-service.html`) — professional servicing checklist (from [Hub.MyBoiler.com](https://hub.myboiler.com/boiler-service/?referrer=boilerservice.com))
 - **About** (`about.html`) — site purpose and related properties
 
-## Booking form (FormSubmit)
+## Booking form (HubSpot)
 
-The `/book/` form posts via [FormSubmit AJAX](https://formsubmit.co/ajax/) to `bookings@boilerservice.com` (see `BOOKING_EMAIL` in `js/book.js`). There is no site backend.
+The `/book/` page embeds a HubSpot form (EU1) rather than posting from this site:
 
-**Confirm this address on first use.** FormSubmit sends a one-time activation email to that inbox; click the link before live bookings will be delivered. Until then, a test submit may report success while asking you to activate, or it may fail until the mailbox exists and is confirmed.
+- Portal ID: `148934146`
+- Form GUID: `82340d84-dc01-4593-98ce-cd512841149f`
+- Embed script: `https://js-eu1.hsforms.net/forms/embed/148934146.js`
 
-To verify locally:
-
-1. Serve the site (`python -m http.server 3456`) and open http://localhost:3456/book/
-2. Submit a complete test request
-3. Check `bookings@boilerservice.com` for the FormSubmit activation (first time) or the booking email
-4. Confirm the on-page success state appears after a successful AJAX response
-
-Captcha is disabled with FormSubmit’s `_captcha=false` flag so customers stay on `/book/` after submit. If FormSubmit later requires captcha, follow their current docs.
+Edit the form in HubSpot; this repo only hosts the embed. To preview locally, serve the site (`python -m http.server 3456`) and open http://localhost:3456/book/.
 
 ## Related sites
 
