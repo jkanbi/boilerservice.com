@@ -3,11 +3,8 @@
   // “BoilerService — Jobs” (spreadsheet 1sAOQzDlgAa3DB4vDZ-4Op5h7Arre8xW1q5poMx98_Gc).
   //
   // After deploying scripts/jobs-form-apps-script.gs as a Web App
-  // (Execute as: Me, Who has access: Anyone), paste the /exec URL here:
-  //   var SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycb…/exec";
-  //
-  // PLACEHOLDER — form UX still works; submissions are blocked until this is set.
-  var SHEET_WEBHOOK_URL = "";
+  // (Execute as: Me, Who has access: Anyone), paste the /exec URL here.
+  var SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbw4CVLC8DGwJWOiS_vbo5CKzfqkDCh6eLhiAEgJUxn_KepmrgSMcuKM09CEsnL9Pk9E/exec";
 
   var UK_POSTCODE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
   var UK_MOBILE = /^(?:\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/;
