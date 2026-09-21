@@ -714,7 +714,8 @@ h2 {
 }
 
 .page-card p:last-child,
-.page-card ul:last-child {
+.page-card ul:last-child,
+.page-card ol:last-child {
   margin-bottom: 0;
 }
 
@@ -761,7 +762,8 @@ h2 {
 }
 
 .prose p,
-.prose ul {
+.prose ul,
+.prose ol {
   color: var(--text-muted);
   line-height: 1.7;
 }
@@ -772,7 +774,8 @@ h2 {
   font-weight: 700;
 }
 
-.prose ul {
+.prose ul,
+.prose ol {
   padding-left: 1.25rem;
 }
 
