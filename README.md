@@ -5,8 +5,24 @@ A simple static microsite for boiler servicing information and links to the MyBo
 ## Pages
 
 - **Home** (`index.html`) — overview, resource links, topics, and popular brands
+- **Book a visit** (`book/index.html`) — customer intake for an annual service or repair in the NW London–M25 launch area (`/book/`)
 - **Boiler Service Checklist** (`boiler-service.html`) — professional servicing checklist (from [Hub.MyBoiler.com](https://hub.myboiler.com/boiler-service/?referrer=boilerservice.com))
 - **About** (`about.html`) — site purpose and related properties
+
+## Booking form (FormSubmit)
+
+The `/book/` form posts via [FormSubmit AJAX](https://formsubmit.co/ajax/) to `bookings@boilerservice.com` (see `BOOKING_EMAIL` in `js/book.js`). There is no site backend.
+
+**Confirm this address on first use.** FormSubmit sends a one-time activation email to that inbox; click the link before live bookings will be delivered. Until then, a test submit may report success while asking you to activate, or it may fail until the mailbox exists and is confirmed.
+
+To verify locally:
+
+1. Serve the site (`python -m http.server 3456`) and open http://localhost:3456/book/
+2. Submit a complete test request
+3. Check `bookings@boilerservice.com` for the FormSubmit activation (first time) or the booking email
+4. Confirm the on-page success state appears after a successful AJAX response
+
+Captcha is disabled with FormSubmit’s `_captcha=false` flag so customers stay on `/book/` after submit. If FormSubmit later requires captcha, follow their current docs.
 
 ## Related sites
 
