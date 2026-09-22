@@ -86,8 +86,7 @@
               </div>
               <div class="form-field">
                 <label for="postcode">Postcode <span class="req-mark" aria-hidden="true">*</span></label>
-                <input id="postcode" name="postcode" type="text" autocomplete="postal-code" required maxlength="10" aria-required="true" aria-describedby="postcode-hint" placeholder="e.g. NW10 4AB">
-                <p class="form-hint" id="postcode-hint">Launch area: NW London and inside the M25.</p>
+                <input id="postcode" name="postcode" type="text" autocomplete="postal-code" required maxlength="10" aria-required="true" placeholder="e.g. NW10 4AB">
                 <p class="form-error" id="postcode-error" hidden></p>
               </div>
             </div>
@@ -125,23 +124,22 @@
                 <label for="boiler-brand">Boiler brand <span class="req-mark" aria-hidden="true">*</span></label>
                 <select id="boiler-brand" name="boiler_brand" required aria-required="true">
                   <option value="">Select a brand</option>
-                  <option value="Worcester Bosch">Worcester Bosch</option>
-                  <option value="Vaillant">Vaillant</option>
-                  <option value="Ideal">Ideal</option>
+                  <option value="Alpha">Alpha</option>
+                  <option value="Ariston">Ariston</option>
                   <option value="Baxi">Baxi</option>
                   <option value="Glow-worm">Glow-worm</option>
-                  <option value="Alpha">Alpha</option>
+                  <option value="Ideal">Ideal</option>
                   <option value="Potterton">Potterton</option>
-                  <option value="Ariston">Ariston</option>
+                  <option value="Vaillant">Vaillant</option>
                   <option value="Viessmann">Viessmann</option>
+                  <option value="Worcester Bosch">Worcester Bosch</option>
                   <option value="Other / not sure">Other / not sure</option>
                 </select>
                 <p class="form-error" id="boiler-brand-error" hidden></p>
               </div>
               <div class="form-field">
                 <label for="boiler-model">Boiler model</label>
-                <input id="boiler-model" name="boiler_model" type="text" maxlength="80" placeholder="e.g. Greenstar 30i" aria-describedby="boiler-model-hint">
-                <p class="form-hint" id="boiler-model-hint">Often on the front of the boiler or in the manual — leave blank if unsure.</p>
+                <input id="boiler-model" name="boiler_model" type="text" maxlength="80" placeholder="e.g. Greenstar 30i">
               </div>
             </div>
 
@@ -173,7 +171,6 @@
 
             <fieldset class="form-fieldset" id="preferred">
               <legend>Preferred day and window <span class="req-mark" aria-hidden="true">*</span></legend>
-              <p class="form-hint form-hint-block">Give a date, or describe what works — and pick a time of day.</p>
               <div class="form-row form-row-2">
                 <div class="form-field">
                   <label for="preferred-date">Preferred date</label>

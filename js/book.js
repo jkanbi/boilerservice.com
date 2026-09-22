@@ -65,13 +65,7 @@
     }
     if (input) {
       input.setAttribute("aria-invalid", "true");
-      if (id === "boiler-model") {
-        input.setAttribute("aria-describedby", "boiler-model-hint " + id + "-error");
-      } else if (id === "postcode") {
-        input.setAttribute("aria-describedby", "postcode-hint " + id + "-error");
-      } else {
-        input.setAttribute("aria-describedby", id + "-error");
-      }
+      input.setAttribute("aria-describedby", id + "-error");
     }
     if (wrap) {
       wrap.classList.add("is-invalid");
@@ -88,13 +82,7 @@
     }
     if (input) {
       input.removeAttribute("aria-invalid");
-      if (id === "postcode") {
-        input.setAttribute("aria-describedby", "postcode-hint");
-      } else if (id === "boiler-model") {
-        input.setAttribute("aria-describedby", "boiler-model-hint");
-      } else {
-        input.removeAttribute("aria-describedby");
-      }
+      input.removeAttribute("aria-describedby");
     }
     if (wrap) {
       wrap.classList.remove("is-invalid");
